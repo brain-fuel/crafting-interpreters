@@ -30,4 +30,4 @@ After having a think about this, we've not been particularly clear with what sho
 * Delete Element: The 'delete_elem' procedure should take a list, and a position from which an item should be deleted (negative numbers count from the back of the list), and should return a pointer to the head of the list. If the item does not exist (is out of bounds of the list), it should not be deleted.
 * Delete: The 'delete' procedure should take a list, and the contents which should be deleted, should delete the first instance of the item found, and should return a pointer to the head of the list. If the item does not exist (is out of bounds of the list), it should not be deleted.
 * Delete Reverse: The 'delete_rev' procedure should take a list, and the contents which should be deleted, should delete the last instance of the item found, and should return a pointer to the head of the list. If the item does not exist (is out of bounds of the list), it should not be deleted.
-* Pretty Print: The 'pretty_fmt' procedure should take a list and return a pretty string thereof.
+* Pretty Format: The 'pretty_fmt' procedure should take a list and return a pretty string thereof.
