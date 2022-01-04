@@ -14,3 +14,33 @@ Here are all the challenge answers associated with Robert Nystrom's book.
 . Get a "Hello, world!" program written and running in Java. Set up whatever makefiles or IDE projects you need to get it working. If you have a debugger, get comfortable with it and step through your program as it runs.
 https://foojay.io/today/jdb/[Here is some documentation on jdb -- a debugger for Java that is bundled with OpenJDK]
 . Do the same thing for C. To get some practice with pointers, define a doubly linked list of heap allocated strings. Write functions to insert, find, and delete items from it. Test them.
++
+After having a think about this, we've not been particularly clear with what should be the behavior of 'insert', 'find', and 'delete'. This means that we have free reign to characterize how this doubly linked list behaves. I think the original set of requirements at least somewhat makes sense, but I'm pretty sure we can do better. Let's outline each function and what it should do:
++
+Length: The 'length' function should return the length of the list.
++
+First: The 'first' function should return the contents of the first element of the list, or to NULL if the list is empty.
++
+Last: The 'last' function should return the contents of the last element of the list, or to NULL if the list is empty.
++ 
+Prepend Element: The 'prepend_elem' procedure should prepend a single element to the list, and return a pointer to the head of the list.
++
+Append Element: The 'append_elem' procedure should append a single element to the list, and return a pointer to the head of the list.
++
+Prepend List: The 'prepend_list' procedure should prepend a list to the list, and return a pointer to the head of the list. Note, that prepending a list to itself will create a circular list.
++
+Append List: The 'append_list' procedure should append a list to the list, and return a pointer to the head of the list. Note, that appending a list to itself will create a circular list.
++
+Find: The 'find' function should take a list, and the contents to find. It should return the first index of the item found, or null if the element does not exist.
++
+Find Reverse: The 'find_rev' function should take a list, and the contents to find. It should search the list in reverse, and return the last index of the item found as a negative number counted from the end (last item of list is index -1), or null if the element does not exist.
++
+Insert Element: The 'insert_elem' procedure should take a list, a position (negative position counts from the back of the list with item -1 being the last item of the list) and the contents to be inserted. If the position is higher than should be possible, for example inserted into position 10 of a 3 element list, then it should be appended. If the position is lower than should be possible, for example inserted into position -10 of a 3 element list, then it should be prepended.
++
+Delete Element: The 'delete_elem' procedure should take a list, and a position from which an item should be deleted (negative numbers count from the back of the list), and should return a pointer to the head of the list. If the item does not exist (is out of bounds of the list), it should not be deleted.
++
+Delete: The 'delete' procedure should take a list, and the contents which should be deleted, should delete the first instance of the item found, and should return a pointer to the head of the list. If the item does not exist (is out of bounds of the list), it should not be deleted.
++
+Delete Reverse: The 'delete_rev' procedure should take a list, and the contents which should be deleted, should delete the last instance of the item found, and should return a pointer to the head of the list. If the item does not exist (is out of bounds of the list), it should not be deleted.
++
+Pretty Print: The 'pretty_fmt' procedure should take a list and return a pretty string thereof.
